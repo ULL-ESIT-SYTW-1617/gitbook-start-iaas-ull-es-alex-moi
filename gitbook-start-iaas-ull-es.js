@@ -1,12 +1,11 @@
 
+var exec = require("ssh-exec");
+var fs = require('fs');
+var child = require("child-process");
 
-/*var config = {
-  host: '10.6.128.129',
-  port: 22,
-  username: 'usuario',
-  privateKey: fs.readFileSync(`${process.env.HOME}/.ssh/id_rsa`)
-}
- 
+/* 
+
+
 var gulpSSH = new GulpSSH({
   ignoreErrors: false,
   sshConfig: config
@@ -21,10 +20,28 @@ function initialize() {
 };
 
 function deploy(ip, ruta, url) {
-    console.log("\nFuncionando");
-    console.log(ip)
-    console.log(ruta)
-    console.log(url)
+    console.log("\n Comenzando el deploy en Iaas");
+    console.log('Direccion IP Destino: '+ip);
+    console.log('Ruta de destino: '+ruta);
+    console.log('Repositorio origen: '+url);
+    
+    
+   /*var config = {
+      host: '10.6.128.129',
+      port: 22,
+      username: 'usuario',
+      privateKey: fs.readFileSync(`${process.env.HOME}/.ssh/id_rsa`)
+    }
+    */
+    
+    exec('cd src/sytw/iaas2/iaas2/; git pull git@github.com:alu0100767421/iaas2.git', {
+      user: 'usuario',
+      host: '10.6.128.129',
+      key: '~/.ssh/id_rsa.pub'
+    });
+    
+  
+    
 };
 
 module.exports = {
