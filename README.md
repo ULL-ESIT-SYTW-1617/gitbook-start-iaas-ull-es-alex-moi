@@ -67,3 +67,5 @@ Un ejemplo de la versión final del gitbook sería: [Ejemplo](https://alu0100782
 * Nitesh Gul Ramnani | [Página Personal](http://alu0100814651.github.io/blog/)
 
 ![Universidad de La Laguna](https://github.com/ULL-ESIT-SYTW-1617/tareas-iniciales-alex-moi/blob/master/images/logotipo-principal.png?raw=true)
+
+gitbook-start-alex-moi-nitesh -c alex -d iaas-ull-es --iaas_ip 10.6.128.129 --iaas_path /scr/sytw/iaas2/iaas2 -u git@github.com:alu0100767421/iaas2.git
