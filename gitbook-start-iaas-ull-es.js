@@ -15,11 +15,19 @@ var gulpSSH = new GulpSSH({
   /*return gulpSSH
     .shell(['cd /home/usuario/src/sytw/iaas', 'git pull']);*/
 
-var deploy = function(ip, ruta) {
+function initialize() {
+    console.log("\nmodulo initialize");
+
+};
+
+function deploy(ip, ruta, url) {
     console.log("\nFuncionando");
     console.log(ip)
     console.log(ruta)
+    console.log(url)
 };
 
-
-module.exports = deploy;
+module.exports = {
+  initialize,
+  deploy
+}
