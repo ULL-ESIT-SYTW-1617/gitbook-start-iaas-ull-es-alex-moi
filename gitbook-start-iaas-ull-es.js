@@ -1,7 +1,7 @@
 
 var exec = require("ssh-exec");
 var fs = require('fs');
-var child = require("child-process");
+
 
 /* 
 
@@ -41,7 +41,6 @@ function deploy(ip, ruta, url) {
     });
     
   
-    
 };
 
 module.exports = {
