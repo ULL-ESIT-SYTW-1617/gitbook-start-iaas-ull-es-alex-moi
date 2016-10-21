@@ -12,6 +12,23 @@ const GitUrlParse = require("git-url-parse");
 function initialize() {
     console.log("\nmodulo initialize");
 
+    fs.appendFile(path.join(__dirname, '..', 'gulpfile.js'),
+        'gulp.task("deploy-iaas", function () {'+ 
+        'var iaas = require("gitbook-start-iaas-ull-es-alex-moi"); var url = paquete.repository.url;'+
+        'var iaas_ip = paquete.iaas.IP;'+
+        'var iaas_path = paquete.iaas.PATH;'+
+        'console.log(url)'+
+        'console.log(iaas_ip)'+
+        'console.log(iaas_path)'+
+        'iaas.deploy(iaas_ip, iaas_path, url);'+
+        '})', 'utf8', function(err){
+            if(err)
+                console.log(err)
+        });
+
+
+
+
 };
 
 function deploy(ip, ruta, url) {
