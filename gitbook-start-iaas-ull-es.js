@@ -30,12 +30,14 @@ function initialize(directorio) {
         if (err) {
             return console.error(err);
         }
+        console.log("Añadiendo tarea gulp")
     });
     
     //copiamos gulpfile a nuestro directorio
     fs.copyFile(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), path.join(process.cwd(), directorio , 'gulpfile.js'),function(err){
         if(err)
           console.log(err);
+         console.log("Tarea gulp añadida a gulpfile")
     });
 
 
