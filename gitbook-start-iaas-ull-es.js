@@ -26,7 +26,7 @@ function initialize(directorio) {
     
     
     //añadimos la tarea
-    fs.writeFile(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
+    fs.writeFileSync(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
         if (err) {
             return console.error(err);
         }
@@ -39,7 +39,7 @@ function initialize(directorio) {
           console.log(err);
          console.log("Tarea gulp añadida a gulpfile")
     });
-
+    console.log("\nInstalando plugin para despliegue en iaas, espere por favor ...");
 
 };
 
