@@ -7,26 +7,36 @@ const GitUrlParse = require("git-url-parse");
 
 
 
-
-
-function initialize() {
+function initialize(directorio) {
     console.log("\nmodulo initialize");
 
-    fs.appendFile(path.join(__dirname, '..', 'gulpfile.js'),
-        'gulp.task("deploy-iaas", function () {'+ 
-        'var iaas = require("gitbook-start-iaas-ull-es-alex-moi"); var url = paquete.repository.url;'+
-        'var iaas_ip = paquete.iaas.IP;'+
-        'var iaas_path = paquete.iaas.PATH;'+
-        'console.log(url)'+
-        'console.log(iaas_ip)'+
-        'console.log(iaas_path)'+
-        'iaas.deploy(iaas_ip, iaas_path, url);'+
-        '})', 'utf8', function(err){
-            if(err)
-                console.log(err)
-        });
+    var contenido='\ngulp.task("deploy-iaas", function () {'+ 
+        '\n\tvar iaas = require("gitbook-start-iaas-ull-es-alex-moi");'+
+        '\n\tvar url = paquete.repository.url;'+
+        '\n\tvar iaas_ip = paquete.iaas.IP;'+
+        '\n\tvar iaas_path = paquete.iaas.PATH;'+
+        '\n\n\tconsole.log(url);'+
+        '\n\tconsole.log(iaas_ip);'+
+        '\n\tconsole.log(iaas_path);'+
+        '\n\n\tiaas.deploy(iaas_ip, iaas_path, url);'+
+        '\n});\n\n';
 
-
+    
+    fs.existsSync(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js')) ? console.log("Existe") : console.log("No existe");
+    
+    
+    //añadimos la tarea
+    fs.writeFile(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
+        if (err) {
+            return console.error(err);
+        }
+    });
+    
+    //copiamos gulpfile a nuestro directorio
+    fs.copyFile(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), path.join(process.cwd(), directorio , 'gulpfile.js'),function(err){
+        if(err)
+          console.log(err);
+    });
 
 
 };
