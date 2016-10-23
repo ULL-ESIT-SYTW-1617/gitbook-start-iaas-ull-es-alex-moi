@@ -14,9 +14,7 @@ function initialize(directorio) {
         '\n\tvar url = paquete.repository.url;'+
         '\n\tvar iaas_ip = paquete.iaas.IP;'+
         '\n\tvar iaas_path = paquete.iaas.PATH;'+
-        '\n\n\tconsole.log(url);'+
-        '\n\tconsole.log(iaas_ip);'+
-        '\n\tconsole.log(iaas_path);'+
+        
         '\n\n\tiaas.deploy(iaas_ip, iaas_path, url);'+
         '\n});\n\n';
 
