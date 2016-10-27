@@ -23,7 +23,7 @@ Con esto podremos conectarnos sin ningún problema a la máquina.
 También es necesario tener generado en la máquina del iaas las claves para utilizar repositorios Github. Puede encontrar la documentación apropiada [en este link](https://help.github.com/articles/generating-an-ssh-key/).
 
 ##Funcionamiento
-Una vez haya seguido la documentación en ```gitbook-start-alex-moi-nitesh``` simplemente debe ejecutar lo siguiente:
+Una vez haya seguido la documentación en [gitbook-start-alex-moi-nitesh](https://github.com/ULL-ESIT-SYTW-1617/nueva-funcionalidad-para-el-paquete-npm-plugins-alex-moi) simplemente debe ejecutar lo siguiente:
 `gulp deploy-iaas`
 Con ello desplegaremos por primera vez el repositorio git especificado.
 Si que queremos actualizar la máquin, también deberemos ejecutar esa tarea.
