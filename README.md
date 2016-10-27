@@ -11,6 +11,23 @@ Este paquete se instala con el siguiente comando:
 ##Descripción del paquete
 El paquete cuenta con dos métodos, **intialize()** y **deploy()**. El primero, al ser invocado por el paquete principal [gitbook-start-alex-moi-nitesh](https://www.npmjs.com/package/gitbook-start-alex-moi-nitesh) añadirá una tarea gulp al gulpfile.js de la aplicación. Esta tarea se llamará **deploy-iaas** e invocará el método **deploy()** que se encargará de desplegar la aplicación en la **máquina iaas**. 
 
+### SSH  keys
+Para conectarnos a la máquina del iaas, tenenmos que tener configurado la [vpn de la ULL](http://www.ull.es/stic/tag/vpn/), y poder configurar un alias para conectarnos más rápidamente por **ssh**.
+Para ello crearemos en `~/.ssh` un fichero `config` con el siguiente contenido:
+```
+Host sytw
+	HostName dir_ip_máquina
+	User usuario
+```
+Con esto podremos conectarnos sin ningún problema a la máquina.
+También es necesario tener generado en la máquina del iaas las claves para utilizar repositorios Github. Puede encontrar la documentación apropiada [en este link](https://help.github.com/articles/generating-an-ssh-key/).
+
+##Funcionamiento
+Una vez haya seguido la documentación en ```gitbook-start-alex-moi-nitesh``` simplemente debe ejecutar lo siguiente:
+`gulp deploy-iaas`
+Con ello desplegaremos por primera vez el repositorio git especificado.
+Si que queremos actualizar la máquin, también deberemos ejecutar esa tarea.
+
 ## Enlaces importantes
 *  [Página en NPM gitbook-start-iaas-ull-es-alex-moi Plugin](https://www.npmjs.com/package/gitbook-start-iaas-ull-es-alex-moi)
 *  [Página en NPM gitbook-start-alex-moi-nitesh](https://www.npmjs.com/package/gitbook-start-alex-moi-nitesh)
