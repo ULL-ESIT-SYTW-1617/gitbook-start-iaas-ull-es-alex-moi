@@ -3,7 +3,7 @@ var exec = require("ssh-exec");
 var fs = require('fs');
 var path = require('path');
 const GitUrlParse = require("git-url-parse");
-
+var GulpSSH = require('gulp-ssh');
 
 
 function initialize(directorio) {
@@ -48,8 +48,36 @@ function deploy(ip, ruta, url) {
     console.log('Direccion IP Destino: '+ip);
     console.log('Ruta de destino: '+ruta+'/'+carpeta.name);
     console.log('Repositorio origen: '+url);
+  
+  /*  
+    var config = {
+        host: ip,
+        user: 'usuario',
+        key: 'fs.readFileSync(`${process.env.HOME}/.ssh/id_rsa`)',
+        port: 22
+    };
     
+    var gulpSSH = new GulpSSH({
+      ignoreErrors: false,
+      sshConfig: config
+    });
 
+    gulpSSH.shell(['cd ' + ruta, 'git clone'], function(err){
+        if(err){
+            gulpSSH.shell(['cd ' + ruta, 'git clone'],function(err){
+                if(err)
+                    console.log("No se ha podido hacer un pull");
+                else
+                    console.log("Pull con éxito");
+            });
+        }
+        
+        else{
+            console.log("Error en la clonacion");
+        }    
+        
+    });
+   */ 
 
     exec('cd '+ruta+';git clone '+url+'',{
           user: 'usuario',
@@ -74,6 +102,7 @@ function deploy(ip, ruta, url) {
             console.log("Clonación del repositorio confirmada");
         }
     });
+    
 };
 
 module.exports = {
