@@ -3,7 +3,6 @@ var exec = require("ssh-exec");
 var fs = require('fs');
 var path = require('path');
 const GitUrlParse = require("git-url-parse");
-var GulpSSH = require('gulp-ssh');
 
 
 function initialize(directorio) {
