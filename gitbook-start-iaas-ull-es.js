@@ -6,7 +6,8 @@ const GitUrlParse = require("git-url-parse");
 
 
 function initialize(directorio) {
-    console.log("\nmodulo initialize");
+    console.log("\n============ INSTALANDO DEPENDENCIAS GITBOOK-START-IAAS-ULL-ES ============")
+    console.log("\nEspere mientras el proceso termina ...")
 
     var contenido='\ngulp.task("deploy-iaas", function () {'+ 
         '\n\tvar iaas = require("gitbook-start-iaas-ull-es-alex-moi");'+
@@ -17,25 +18,21 @@ function initialize(directorio) {
         '\n\n\tiaas.deploy(iaas_ip, iaas_path, url);'+
         '\n});\n\n';
 
-    
-    fs.existsSync(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js')) ? console.log("Existe") : console.log("No existe");
-    
-    
+
     //añadimos la tarea
     fs.writeFileSync(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
         if (err) {
             return console.error(err);
         }
-        console.log("Añadiendo tarea gulp")
+        
     });
     
     //copiamos gulpfile a nuestro directorio
     fs.copyFile(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), path.join(process.cwd(), directorio , 'gulpfile.js'),function(err){
         if(err)
           console.log(err);
-         console.log("Tarea gulp añadida a gulpfile")
     });
-    console.log("\nInstalando plugin para despliegue en iaas, espere por favor ...");
+
 
 };
 
