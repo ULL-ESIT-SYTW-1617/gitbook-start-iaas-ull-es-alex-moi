@@ -1,6 +1,6 @@
 {
   "name": "gitbook-start-iaas-ull-es-alex-moi",
-  "version": "1.2.6",
+  "version": "1.2.8",
   "description": "Plugin deploy maquina iaas-ull-es",
   "main": "gitbook-start-iaas-ull-es.js",
   "scripts": {
@@ -39,7 +39,6 @@
   "dependencies": {
     "fs": "0.0.1-security",
     "fs-extended": "^0.2.1",
-    "fs-extra": "^0.30.0",
     "gh-pages": "^0.11.0",
     "gitbook-cli": "^2.3.0",
     "gulp": "^3.9.1",
