@@ -19,20 +19,14 @@ function initialize(directorio) {
         '\n});\n\n';
 
 
-    //añadimos la tarea
-    fs.writeFileSync(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
-        if (err) {
-            return console.error(err);
-        }
-        
-    });
-    
-    //copiamos gulpfile a nuestro directorio
-    fs.copyFile(path.join(process.cwd(), 'node_modules','gitbook-start-alex-moi-nitesh','gulpfile.js'), path.join(process.cwd(), directorio , 'gulpfile.js'),function(err){
-        if(err)
-          console.log(err);
-    });
-
+        //añadimos la tarea
+            fs.writeFileSync(path.resolve(process.cwd(),'gulpfile.js'), contenido,  {'flag':'a'},  function(err) {
+                if (err) {
+                    return console.error(err);
+                }
+                
+                   
+            });
 
 };
 
@@ -45,35 +39,6 @@ function deploy(ip, ruta, url) {
     console.log('Ruta de destino: '+ruta+'/'+carpeta.name);
     console.log('Repositorio origen: '+url);
   
-  /*  
-    var config = {
-        host: ip,
-        user: 'usuario',
-        key: 'fs.readFileSync(`${process.env.HOME}/.ssh/id_rsa`)',
-        port: 22
-    };
-    
-    var gulpSSH = new GulpSSH({
-      ignoreErrors: false,
-      sshConfig: config
-    });
-
-    gulpSSH.shell(['cd ' + ruta, 'git clone'], function(err){
-        if(err){
-            gulpSSH.shell(['cd ' + ruta, 'git clone'],function(err){
-                if(err)
-                    console.log("No se ha podido hacer un pull");
-                else
-                    console.log("Pull con éxito");
-            });
-        }
-        
-        else{
-            console.log("Error en la clonacion");
-        }    
-        
-    });
-   */ 
 
     exec('cd '+ruta+';git clone '+url+'',{
           user: 'usuario',

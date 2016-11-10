@@ -5,13 +5,15 @@ Este paquete es un plugin del paquete ```gitbook-start-alex-moi-nitesh```.
 Ofrece la posibilidad de desplegar en la máquina **iaas.ull.es** nuestra aplicación.
 
 ##Instalación
-Este paquete se instala con el siguiente comando:
-```npm install -g gitbook-start-iaas-ull-es-alex-moi```
-```npm install --save gitbook-start-iaas-ull-es-alex-moi```
+
+**Debemos tener** instalado el paquete principal en **global**. Con esto hecho no es necesario instalar el paquete plugin heroku puesto que al ejecutar la aplicación de la forma que se expone a continuación, ésta lo instala por nosotros.
+Por tanto, ejecutamos desde el directorio de nuestro gitbook (asegúrese de haber instalado todas las dependencias antes con `npm install`:
+```shell
+gitbook-start-alex-moi-nitesh -d iaas-ull-es
+```
 
 ##Descripción del paquete
 El paquete cuenta con dos métodos, **intialize()** y **deploy()**. El primero, al ser invocado por el paquete principal [gitbook-start-alex-moi-nitesh](https://www.npmjs.com/package/gitbook-start-alex-moi-nitesh) añadirá una tarea gulp al gulpfile.js de la aplicación. Esta tarea se llamará **deploy-iaas** e invocará el método **deploy()** que se encargará de desplegar la aplicación en la **máquina iaas**. 
-
 
 
 ### SSH  keys
@@ -27,10 +29,29 @@ También es necesario tener generado en la máquina del iaas las claves para uti
 
 ##Funcionamiento
 
-Una vez haya seguido la documentación en [gitbook-start-alex-moi-nitesh](https://github.com/ULL-ESIT-SYTW-1617/nueva-funcionalidad-para-el-paquete-npm-plugins-alex-moi) simplemente debe ejecutar lo siguiente:
-`gulp deploy-iaas`
-Con ello desplegaremos por primera vez el repositorio git especificado.
-Si que queremos actualizar la máquina, también deberemos ejecutar esa tarea.
+Después de haber ejecutado el comando del paso de **Instalación**, se instalará el paquete gitbook-start-iaas-ull-es-alex-moi automaticamente y ya podremos desplegar en la máquina iaas.
+El siguiente paso es introducir en el **package.json**, nuestra **ip** y la **ruta** donde queramos desplegar el libro en la seccion "iaas". Por ejemplo:
+
+```
+"iaas": {
+    "IP": "10.10.10.10",
+    "PATH": "/home/nombre_usuario/ruta"
+  },
+```
+
+**Es importante que no ponga '/' al final de la ruta**
+
+Si no ha introducido en el package.json->repository.url una direccion de un repositorio, póngala(version http).
+
+A conitnuación, ejecute lo siguiente:
+
+1. `gulp build` le creará en la carpeta gh-pages el libro
+2. Suba sus cambios a github `git add .` `git commit -m "cambios"` `git push origin master`
+3. `gulp deploy-iaas` le creara en su maquina iaas su libro
+4. Acceda a su maquina archivo de su máquina ip y ejecute `node server.js`
+5. Accdea a su página en **http://ip:8080/**
+
+Si en algun momento hace algún cambio en su libro, vuelva a ejecutar los anteriores comandos.
 
 ## Enlaces importantes
 *  [Página en NPM gitbook-start-iaas-ull-es-alex-moi Plugin](https://www.npmjs.com/package/gitbook-start-iaas-ull-es-alex-moi)
