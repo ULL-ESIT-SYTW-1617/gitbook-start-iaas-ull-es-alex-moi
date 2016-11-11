@@ -1,0 +1,127 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/ubuntu/.nvm/versions/node/v4.6.1/bin/node',
+1 verbose cli   '/home/ubuntu/.nvm/versions/node/v4.6.1/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@2.15.9
+3 info using node@v4.6.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/ubuntu/workspace/gitbook-start-iaas-ull-es-alex-moi',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/ubuntu/.npm/gitbook-start-iaas-ull-es-alex-moi/1.2.11/package.tgz not in flight; packing
+9 verbose correctMkdir /home/ubuntu/.npm correctMkdir not in flight; initializing
+10 verbose tar pack [ '/home/ubuntu/.npm/gitbook-start-iaas-ull-es-alex-moi/1.2.11/package.tgz',
+10 verbose tar pack   '/home/ubuntu/workspace/gitbook-start-iaas-ull-es-alex-moi' ]
+11 verbose tarball /home/ubuntu/.npm/gitbook-start-iaas-ull-es-alex-moi/1.2.11/package.tgz
+12 verbose folder /home/ubuntu/workspace/gitbook-start-iaas-ull-es-alex-moi
+13 info prepublish gitbook-start-iaas-ull-es-alex-moi@1.2.11
+14 verbose addLocalTarball adding from inside cache /home/ubuntu/.npm/gitbook-start-iaas-ull-es-alex-moi/1.2.11/package.tgz
+15 verbose correctMkdir /home/ubuntu/.npm correctMkdir not in flight; initializing
+16 silly cache afterAdd gitbook-start-iaas-ull-es-alex-moi@1.2.11
+17 verbose afterAdd /home/ubuntu/.npm/gitbook-start-iaas-ull-es-alex-moi/1.2.11/package/package.json not in flight; writing
+18 verbose correctMkdir /home/ubuntu/.npm correctMkdir not in flight; initializing
+19 verbose afterAdd /home/ubuntu/.npm/gitbook-start-iaas-ull-es-alex-moi/1.2.11/package/package.json written
+20 silly publish { name: 'gitbook-start-iaas-ull-es-alex-moi',
+20 silly publish   version: '1.2.11',
+20 silly publish   description: 'Plugin deploy maquina iaas-ull-es',
+20 silly publish   main: 'gitbook-start-iaas-ull-es.js',
+20 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+20 silly publish   repository:
+20 silly publish    { type: 'git',
+20 silly publish      url: 'git+https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-iaas-ull-es-alex-moi.git',
+20 silly publish      wiki: 'https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-iaas-ull-es-alex-moi.wiki.git' },
+20 silly publish   keywords: [ 'gitbook', 'npm package' ],
+20 silly publish   author:
+20 silly publish    { name: 'Moises Yanes Carballo',
+20 silly publish      email: 'alu0100782851@ull.edu.es',
+20 silly publish      url: 'http://alu0100782851.github.io/' },
+20 silly publish   contributors:
+20 silly publish    [ { name: 'Alexander Cole Mora',
+20 silly publish        email: 'alu0100767421@ull.edu.es',
+20 silly publish        url: 'http://alu0100767421.github.io/' },
+20 silly publish      { name: 'Nitesh Gul Ramnani',
+20 silly publish        email: 'alu0100814651@ull.edu.es',
+20 silly publish        url: 'http://alu0100814651.github.io/blog/' } ],
+20 silly publish   license: 'ISC',
+20 silly publish   bugs: { url: 'https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-iaas-ull-es-alex-moi.git/issues' },
+20 silly publish   bin: { 'gitbook-start-iaas-ull-es': './gitbook-start-iaas-ull-es.js' },
+20 silly publish   homepage: 'https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-iaas-ull-es-alex-moi.git#readme',
+20 silly publish   dependencies:
+20 silly publish    { fs: '0.0.1-security',
+20 silly publish      'fs-extended': '^0.2.1',
+20 silly publish      'gh-pages': '^0.11.0',
+20 silly publish      'gitbook-cli': '^2.3.0',
+20 silly publish      gulp: '^3.9.1',
+20 silly publish      'gulp-shell': '^0.5.2',
+20 silly publish      path: '^0.12.7',
+20 silly publish      'git-url-parse': '^6.0.7' },
+20 silly publish   readme: '\n# Sistemas y Tecnologías Web. Gitbook Start iaas.ull.es. Plugins\n\nEste paquete es un plugin del paquete ```gitbook-start-alex-moi-nitesh```.\nOfrece la posibilidad de desplegar en la máquina **iaas.ull.es** nuestra aplicación.\n\n##Instalación\n\n**Debemos tener** instalado el paquete principal en **global**. Con esto hecho no es necesario instalar el paquete plugin heroku puesto que al ejecutar la aplicación de la forma que se expone a continuación, ésta lo instala por nosotros.\nPor tanto, ejecutamos desde el directorio de nuestro gitbook (asegúrese de haber instalado todas las dependencias antes con `npm install`:\n```shell\ngitbook-start-alex-moi-nitesh -d iaas-ull-es --iaas_ip <direccion_ip> --iaas_path /home/nombre_usuario/ruta\n```\n\n**Es importante que no ponga \'/\' al final de la ruta** y en **nombre_usuario el usuario de su maquina (generalmente usuario)**\n\n##Descripción del paquete\nEl paquete cuenta con dos métodos, **intialize()** y **deploy()**. El primero, al ser invocado por el paquete principal [gitbook-start-alex-moi-nitesh](https://www.npmjs.com/package/gitbook-start-alex-moi-nitesh) añadirá una tarea gulp al gulpfile.js de la aplicación. Esta tarea se llamará **deploy-iaas** e invocará el método **deploy()** que se encargará de desplegar la aplicación en la **máquina iaas**. \n\n\n### SSH  keys\nPara conectarnos a la máquina del iaas, tenenmos que tener configurado la [vpn de la ULL](http://www.ull.es/stic/tag/vpn/), y poder configurar un alias para conectarnos más rápidamente por **ssh**.\nPara ello crearemos en `~/.ssh` un fichero `config` con el siguiente contenido:\n```\nHost sytw\n\tHostName dir_ip_máquina\n\tUser usuario\n```\nCon esto podremos conectarnos sin ningún problema a la máquina.\nTambién es necesario tener generado en la máquina del iaas las claves para utilizar repositorios Github. Puede encontrar la documentación apropiada [en este link](https://help.github.com/articles/generating-an-ssh-key/).\n\n##Funcionamiento\n\nDespués de haber ejecutado el comando del paso de **Instalación**, se instalará el paquete gitbook-start-iaas-ull-es-alex-moi automaticamente y ya podremos desplegar en la máquina iaas.\n\n\n**Es importante que no ponga \'/\' al final de la ruta**\n\nSi no ha introducido en el package.json->repository.url una direccion de un repositorio, póngala(version http).\n\nA conitnuación, ejecute lo siguiente:\n\n1. `gulp build` le creará en la carpeta gh-pages el libro\n2. Suba sus cambios a github `git add .` `git commit -m "cambios"` `git push origin master`\n3. `gulp deploy-iaas` le creara en su maquina iaas su libro\n4. Acceda a su maquina archivo de su máquina ip y ejecute `node server.js`\n5. Accdea a su página en **http://ip:8080/**\n\nSi en algun momento hace algún cambio en su libro, vuelva a ejecutar los anteriores comandos.\n\n\n## Enlaces importantes\n*  [Página en NPM gitbook-start-iaas-ull-es-alex-moi Plugin](https://www.npmjs.com/package/gitbook-start-iaas-ull-es-alex-moi)\n*  [Página en NPM gitbook-start-alex-moi-nitesh](https://www.npmjs.com/package/gitbook-start-alex-moi-nitesh)\n*  [Repositorio GitHub](https://github.com/ULL-ESIT-SYTW-1617/gitbook-start-iaas-ull-es-alex-moi)\n*  [Descripción de la práctica](https://casianorodriguezleon.gitbooks.io/ull-esit-1617/content/practicas/practicaplugin.html)\n*  [Campus Virtual](https://campusvirtual.ull.es/1617/course/view.php?id=1175)\n\n## Autores\n\n* Alexander Cole Mora | [Página Personal](http://alu0100767421.github.io/)\n* Moisés Yanes Carballo | [Página Personal](http://alu0100782851.github.io/)\n\n\n\n\n',
+20 silly publish   readmeFilename: 'README.md',
+20 silly publish   gitHead: '09473ddbeaae336fe8551da58ec1874758c75043',
+20 silly publish   _id: 'gitbook-start-iaas-ull-es-alex-moi@1.2.11',
+20 silly publish   _shasum: '8f7c6ce6cfa09c52829ca86e314543d24eaef24b',
+20 silly publish   _from: '.' }
+21 verbose getPublishConfig undefined
+22 silly mapToRegistry name gitbook-start-iaas-ull-es-alex-moi
+23 silly mapToRegistry using default registry
+24 silly mapToRegistry registry https://registry.npmjs.org/
+25 silly mapToRegistry data Result {
+25 silly mapToRegistry   raw: 'gitbook-start-iaas-ull-es-alex-moi',
+25 silly mapToRegistry   scope: null,
+25 silly mapToRegistry   name: 'gitbook-start-iaas-ull-es-alex-moi',
+25 silly mapToRegistry   rawSpec: '',
+25 silly mapToRegistry   spec: 'latest',
+25 silly mapToRegistry   type: 'tag' }
+26 silly mapToRegistry uri https://registry.npmjs.org/gitbook-start-iaas-ull-es-alex-moi
+27 verbose publish registryBase https://registry.npmjs.org/
+28 silly publish uploading /home/ubuntu/.npm/gitbook-start-iaas-ull-es-alex-moi/1.2.11/package.tgz
+29 verbose request uri https://registry.npmjs.org/gitbook-start-iaas-ull-es-alex-moi
+30 verbose request sending authorization for write operation
+31 info attempt registry request try #1 at 9:44:19 AM
+32 verbose request using bearer token for auth
+33 verbose request id 1ca603c876fe4a2d
+34 http request PUT https://registry.npmjs.org/gitbook-start-iaas-ull-es-alex-moi
+35 http 403 https://registry.npmjs.org/gitbook-start-iaas-ull-es-alex-moi
+36 verbose headers { 'content-type': 'application/json',
+36 verbose headers   'cache-control': 'max-age=300',
+36 verbose headers   'content-length': '96',
+36 verbose headers   'accept-ranges': 'bytes',
+36 verbose headers   date: 'Fri, 11 Nov 2016 09:44:21 GMT',
+36 verbose headers   via: '1.1 varnish',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'x-served-by': 'cache-lcy1138-LCY',
+36 verbose headers   'x-cache': 'MISS',
+36 verbose headers   'x-cache-hits': '0',
+36 verbose headers   'x-timer': 'S1478857459.625328,VS0,VE1459',
+36 verbose headers   vary: 'Accept-Encoding' }
+37 verbose request invalidating /home/ubuntu/.npm/registry.npmjs.org/gitbook-start-iaas-ull-es-alex-moi on PUT
+38 error publish Failed PUT 403
+39 verbose stack Error: "You cannot publish over the previously published version 1.2.11." : gitbook-start-iaas-ull-es-alex-moi
+39 verbose stack     at makeError (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+39 verbose stack     at CachingRegistryClient.<anonymous> (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+39 verbose stack     at Request._callback (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+39 verbose stack     at Request.self.callback (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/npm/node_modules/request/request.js:200:22)
+39 verbose stack     at emitTwo (events.js:87:13)
+39 verbose stack     at Request.emit (events.js:172:7)
+39 verbose stack     at Request.<anonymous> (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/npm/node_modules/request/request.js:1067:10)
+39 verbose stack     at emitOne (events.js:82:20)
+39 verbose stack     at Request.emit (events.js:169:7)
+39 verbose stack     at IncomingMessage.<anonymous> (/home/ubuntu/.nvm/versions/node/v4.6.1/lib/node_modules/npm/node_modules/request/request.js:988:12)
+40 verbose statusCode 403
+41 verbose pkgid gitbook-start-iaas-ull-es-alex-moi
+42 verbose cwd /home/ubuntu/workspace/gitbook-start-iaas-ull-es-alex-moi
+43 error Linux 4.2.0-c9
+44 error argv "/home/ubuntu/.nvm/versions/node/v4.6.1/bin/node" "/home/ubuntu/.nvm/versions/node/v4.6.1/bin/npm" "publish"
+45 error node v4.6.1
+46 error npm  v2.15.9
+47 error code E403
+48 error "You cannot publish over the previously published version 1.2.11." : gitbook-start-iaas-ull-es-alex-moi
+49 error If you need help, you may report this error at:
+49 error     <https://github.com/npm/npm/issues>
+50 verbose exit [ 1, true ]
