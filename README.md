@@ -29,6 +29,8 @@ Host sytw
 Con esto podremos conectarnos sin ningún problema a la máquina.
 También es necesario tener generado en la máquina del iaas las claves para utilizar repositorios Github. Puede encontrar la documentación apropiada [en este link](https://help.github.com/articles/generating-an-ssh-key/).
 
+Introduzca el siguiente comando `ssh-copy-id usuario@direccion-servidor-iaas`
+
 ##Funcionamiento
 
 Después de haber ejecutado el comando del paso de **Instalación**, se instalará el paquete gitbook-start-iaas-ull-es-alex-moi automaticamente y ya podremos desplegar en la máquina iaas.
